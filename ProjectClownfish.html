@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Project C(lownfish)</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="600" height="600">
+    Please use a browser that supports "canvas"
+    </canvas>
+
+    <div id= Description>
+      Behold! An anemone and its clownfish friends (plus a sphere).
+      <br />
+      Use the left, right, up, and down arrow keys to move the camera to the left, right, forward, and backward respectively.
+      Use the W, A, S, and D keys to look up, left, down, and right respectively. 
+      <br />
+      Use the M key to change the material of the sphere. 
+      <br />
+      Click the "Show/Hide Grid" button to show or hide the grid. Click the "Gouraud/Phong Shading" button to switch between Gouraud and Phong shading.
+      <br />
+      Click the "Light Switch" button to switch the light on or off. Click the "Blinn-Phong/Phong Lighting" button to switch between Blinn-Phong and Phong lighting.
+      <br />
+      Enter x, y, and z coordinates of the desired lamp position, fill in custom RGB values for ambient, diffuse, and specular lighting, and click the respective submit buttons to adjust the lighting in the scene.
+    </div>
+
+
+    <div id="Buttons">
+      <p>
+        <button type="button" onclick="VBO0toggle()">Show/Hide Grid</button>
+        <button type="button" onclick="VBO1toggle()">Gouraud/Phong Shading</button>
+        <button type="button" onclick="lightSwitch()">Light Switch</button>
+        <button type="button" onclick="changeLightType()">Blinn-Phong/Phong Lighting</button>
+      </p>
+      <p>
+        Lamp X: <input id='userLampX' size='7'> Lamp Y: <input id='userLampY' size='7'> Lamp Z: <input id='userLampZ' size='7'> <button type="button" onclick="moveLamp()">Submit Lamp Location</button>
+        <br />
+        <br />
+        Set ambient lighting RGB
+        R: <input id='userAmbR' size='7'> G: <input id='userAmbG' size='7'> B: <input id='userAmbB' size='7'> <button type="button" onclick="setAmbient()">Submit Ambient RGB</button>
+        <br />
+        <br />
+        Set diffuse lighting RGB
+        R: <input id='userDiffR' size='7'> G: <input id='userDiffG' size='7'> B: <input id='userDiffB' size='7'> <button type="button" onclick="setDiffuse()">Submit Diffuse RGB</button>
+        <br />
+        <br />
+        Set specular lighting RGB
+        R: <input id='userSpecR' size='7'> G: <input id='userSpecG' size='7'> B: <input id='userSpecB' size='7'> <button type="button" onclick="setSpecular()">Submit Specular RGB</button>
+      </p>
+    </div>
+
+    <!-- LIBRARIES -->
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-quat03.js"></script>
+    <script src="lib/materials_Ayerdi.js"></script>
+    <script src="lib/lights.js"></script>
+    <script src="lib/MZ_VBObox-Lib.js"></script>
+    <script src="ProjectClownfish.js"></script>
+  </body>
+</html>
